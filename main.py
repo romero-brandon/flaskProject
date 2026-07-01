@@ -1,13 +1,10 @@
 from flask import Flask, render_template, url_for, flash, redirect
 from forms import RegistrationForm
 from flask_behind_proxy import FlaskBehindProxy
-import os
-from dotenv import load_dotenv
-
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
-app.config['SECRET_KEY'] = os.getenv('SECRET')
+app.config['SECRET_KEY'] = '054984dba83111eb661c17a5bc4778ed'
 
 @app.route("/")
 def home():
